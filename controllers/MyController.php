@@ -74,24 +74,10 @@ class MyController extends Controller
      */
     public function actionIndex()
     {
-
         return $this->render('index');
     }
 
 
-
-    /**
-     * Displays homepage.
-     *
-     * @return mixed
-     */
-    public function actionIndex2()
-    {
-
-        $user=User::find()->where(['id'=>3])->one();
-        Yii::$app->user->login($user,3600);
-        return $this->render('index');
-    }
 
 
     /**
@@ -101,12 +87,9 @@ class MyController extends Controller
      */
     public function actionLogin()
     {
-
-
         if (!Yii::$app->user->isGuest and !\Yii::$app->request->get()['username']) {
             return $this->redirect('/my/');
         }
-
         $model = new LoginForm();
 
 
@@ -223,10 +206,8 @@ class MyController extends Controller
         $user->username = 'test2';
         $user->email = 'test@mail.ru';
         $user->status = User::STATUS_SUPERADMIN;
-
-
-        if($user->save())
-            print "1";
+        $user->save();
+           
 
     }
 
@@ -241,8 +222,6 @@ class MyController extends Controller
             return false;
         }
     }
-
-
 
 
 
