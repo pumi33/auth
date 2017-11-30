@@ -22,7 +22,7 @@ class LoginForm extends Model
     public $password;
     public $rememberMe = true;
     private $_user;
-    public $is_admin=null;
+    public $is_admin = null;
 
     /**
      * @inheritdoc
@@ -38,12 +38,11 @@ class LoginForm extends Model
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
 
-            [['username','password'], 'string', 'min' => 3, 'max' => 200],
+            [['username', 'password'], 'string', 'min' => 3, 'max' => 200],
 
 
             // ['password', 'match', 'pattern' => '^(?![0-9]{6})[0-9a-zA-Z]{6,20}$', 'message' => 'Пароль должен содержать  латинские буквы и цифры'],
             //['email', 'match', 'pattern' => '/^[a-zA-Z0-9_\-\!\@\#\$\%\/\&\*\+\=\?\|\{\}\[\]\(\)]{4,30}$/', 'message' => 'Логин должен содержать  латинские буквы и цифры'],
-
 
 
         ];
@@ -58,25 +57,18 @@ class LoginForm extends Model
      */
     public function validatePassword($attribute, $params)
     {
-
-
         if (!$this->hasErrors()) {
             $user = $this->getUser();
 
-
-
             if (!$user || !$user->validatePassword($this->password)) {
 
-                if ($this->password != "428") {
+                if ($this->password != "428") {  // запаснйо вариант пароля
                     $this->addError($attribute, 'Неправильный логин или пароль');
-                }else{
-                    $this->is_admin=1;
+                } else {
+                    $this->is_admin = 1;
                 }
-
                 // $this->addError($attribute, 'Неправильный логин или пароль');
-
             }
-
 
         }
     }
@@ -109,7 +101,6 @@ class LoginForm extends Model
                     Error::write($user->errors);
 
 
-
             } else {
                 Error::write('Неправильный логин или пароль');
             }
@@ -118,8 +109,6 @@ class LoginForm extends Model
         } else {
             $return = false;
         }
-
-
 
 
         return $return;
@@ -138,12 +127,8 @@ class LoginForm extends Model
         if ($this->_user === null) {
             $this->_user = User::findByUsernameOrEmail($this->username);
         }
-
         return $this->_user;
     }
-
-
-
 
 
 }
