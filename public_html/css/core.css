@@ -1,0 +1,94 @@
+/*-  Base styles
+----------------------------------------------------------------------*/
+body {
+	background: #212121 url("/img/bg.jpg") no-repeat 50% 0;
+	color: #EFEFEF;
+	font: normal 62.5% Garamond, "Times New Roman", Times, Georgia, serif;
+	margin: 0;
+	padding: 0;
+}
+
+input, select, textarea {
+	font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+}
+
+
+/*-  Varnish.
+----------------------------------------------------------------------*/
+.ineffable {
+	height: 0;
+	left: -1000px;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+}
+
+a img {
+	border: none;
+}
+
+abbr, acronym {
+	border-bottom: none;
+	cursor: help;
+	font-style: normal;
+}
+
+form, fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+input.text {
+	border: 1px solid #7C7C7C;
+	border-color: #7C7C7C #7C7C7C #C3C3C3 #C3C3C3;
+}
+
+
+/*-  Content
+----------------------------------------------------------------------*/
+#container {
+	background: #141414 url("/img/bg-content.jpg") no-repeat 50% 0;
+	margin: 0 auto;
+	max-width: 83%;
+	width: 42.4em;
+}
+
+#content {
+	padding: 68px 60px 40px;
+}
+
+#content a {
+	color: #EFEFEF;
+	font-size: 0.8em;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#content a:hover {
+	color: #7ED47E;
+}
+
+#content a img {
+	display: block;
+	margin: 70px auto;
+}
+
+#content h1, #content p {
+	font-size: 4em;
+	line-height: 1.2;
+	margin-bottom: 1.3em;
+	text-align: center;
+	color: orange;
+		font-family:  Times New Roman, Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
+
+#content h2, #content p {
+	font-size: 3em;
+	line-height: 1.2;
+	margin-bottom: 1.3em;
+	text-align: center;
+		font-family:  Times New Roman, Verdana, Geneva, Helvetica, Arial, sans-serif;
+}
